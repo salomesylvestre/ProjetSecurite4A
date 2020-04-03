@@ -48,8 +48,8 @@ public class ChatServer implements Runnable {
             Cipher cipher = Cipher.getInstance("AES");
             fr = new FileReader(f.getAbsoluteFile());
             BufferedReader br = new BufferedReader(fr);
-            String k2r = br.readLine();
-            byte[] decodedKey = Base64.decode(k2r);
+            String key = br.readLine();
+            byte[] decodedKey = Base64.decode(key);
             cle = new SecretKeySpec(decodedKey, 0, decodedKey.length, "AES");
             //initialisation de la classe de cryptage/decryptage
             cryptage = new TP3(cle);
